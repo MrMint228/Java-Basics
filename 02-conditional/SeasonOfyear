@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class SeasonOfyear {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Определим время года, введите  номер месяца? ");
+
+        if (scan.hasNextInt()) {
+            int NumberOfMonth = scan.nextInt();
+            if (NumberOfMonth <= 12)
+            {
+                if (NumberOfMonth <= 11 && NumberOfMonth >= 9)
+                {
+                    System.out.println("Сейчас Осень!");
+                } else if (NumberOfMonth <= 8 && NumberOfMonth >= 6) {
+
+                    System.out.println("Сейчас Лето!");
+                } else if (NumberOfMonth <= 5 && NumberOfMonth >= 3) {
+                    System.out.println("Сейчас Весна!");
+                } else if (NumberOfMonth == 12 || NumberOfMonth == 1 || NumberOfMonth ==2)
+                {
+                    System.out.println("Сейчас зима!");
+                }
+
+
+            }
+            else
+                System.out.println("В году нет  такого месяца, их всего 12");
+
+        } else
+            System.out.println("Вы ввели не номер месяца");
+        scan.close();
+    }
+}
