@@ -1,0 +1,43 @@
+import java.util.Scanner;
+/**
+ * Программа для сравнения двух чисел с плавающей точкой
+ * с заданной точностью сравнения
+ * 
+ */
+
+public class Maximum {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите первое число для сравнения");
+
+        if (scan.hasNextFloat()){
+
+
+            Float number1 = scan.nextFloat();
+            System.out.println("Введите второе число для сравнения");
+            Float number2 = scan.nextFloat();
+
+            if (number1 - number2 < 0.001f && number2 - number1 < 0.001f){
+
+
+                System.out.println("Числа равны друг другу");}
+
+            else if(number2 > number1){
+
+                System.out.print("Второе число больше первого ");
+                float difference = number2 - number1;
+                System.out.println("на " + difference);
+
+            }
+            else {
+
+                System.out.print("Первое число больше второго ");
+                float difference = number1 - number2;
+                System.out.println("на " + difference);
+            }
+        }
+        scan.close();
+
+
+    }
+}
