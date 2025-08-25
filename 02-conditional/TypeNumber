@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+
+public class TypeNUmber {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+         if(scan.hasNextFloat()){
+             float number = scan.nextFloat();
+             if (number > 0){
+                 System.out.println("Число положительное, оно больше нуля!");
+             } else if (number < 0) {
+                 System.out.println("Число отрицательное, оно меньше нуля!");
+
+             } else System.out.println("Вы ввели нуль");
+         } else System.out.println("Ошибка, вы ввели не число");
+
+         scan.close();
+
+    }
+}
