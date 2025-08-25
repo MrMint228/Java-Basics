@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class TimesOfDay
+{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Определим время суток, введите который сейчас час? ");
+
+        if(scan.hasNextInt()) {
+            int time = scan.nextInt();
+            if (time <= 24) {
+                if (time <= 12 && time >= 6)
+                {
+                    System.out.println("Сейчас утро!");
+                } else if (time <= 17 && time >= 13)
+                {
+
+                    System.out.println("Сейчас день!");
+                } else if (time <= 22 && time >= 18) {
+                    System.out.println("Сейчас вечер!");
+                } else if (time >= 22 || time <= 5) {
+                    System.out.println("Сейчас ночь!");
+                }
+
+
+
+        }    else
+                System.out.println("Ты вышел из диапазона часов в сутках, их всего 24");
+
+
+
+    }else
+            System.out.println("Ты ввёл не целое число, пока что программа не поддерживает часы с минутами");
+
+}
+}
