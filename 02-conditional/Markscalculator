@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Markscalculator{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Для того чтобы узнать, какая у вас  оценка, пожалуйста напишите ваши баллы: ");
+        if (scan.hasNextInt()){
+            int scores = scan.nextInt();
+            if (scores <= 100 && scores >= 90){
+                System.out.println("Согласно баллам, ваша оценка 5!");
+            } else if (scores <= 89 && scores >= 80 ) {
+                System.out.println("Согласно баллам, ваша оценка 4!");
+                
+            } else if (scores <= 79 && scores >= 70) {
+                System.out.println("Согласно баллам, ваша оценка 3!");
+            } else if (scores <= 69 && scores >= 60) {
+                System.out.println("Согласно баллам, ваша оценка 2!");
+            } else if (scores <= 59 && scores >= 0) {
+                System.out.println("Согласно баллам, ваша оценка 1!");
+            } else
+                System.out.println("Вы неправильно ввели ваши баллы");
+
+        } else
+            System.out.println("Вы ввели не целое число");
+        scan.close();
+
+
+    }
+}
