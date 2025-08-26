@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class ISLeapyYear {
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введи год, чтобы проверить високосный ли он: ");
+        if (scan.hasNextInt())
+        {
+            int year = scan.nextInt();
+            if (year == 0) {
+                System.out.println("Забавно, но твой год(0) високосный");
+            } else if (year % 100 == 0 && year % 400 != 0) {
+                System.out.println("Твой год невисокосный, т.к он вековой и не делится на 400");
+
+            } else if (year % 400 == 0) {
+
+                System.out.println("Твой год високосный, т.к делится на 400");
+
+            } else if ((year % 4 == 0)){
+
+                System.out.println("Твой год високосный, т.к делится на 4");
+            } else
+                System.out.println("Твой год невисокосный");
+
+        } else
+            System.out.println("Не бывает нецелочисленных годов, введи целочисленное число в следующий раз");
+
+
+
+        scan.close();
+    }
+
+}
