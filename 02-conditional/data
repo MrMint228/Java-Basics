@@ -1,0 +1,95 @@
+
+import java.util.Scanner;
+
+public class data {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите дату, а именно день месяц и год");
+        System.out.print("День: ");
+        if (scan.hasNextInt()){
+            int day = scan.nextInt();
+            System.out.print("Номер месяца: ");
+            int month = scan.nextInt();
+            System.out.print("Какой год? ");
+            int year = scan.nextInt();
+            boolean isleapy;
+            if (year == 0)
+            {
+                isleapy = true;
+            } else if (year % 100 == 0 && year % 400 != 0)
+            {
+                isleapy = false;
+            } else if (year % 400 == 0)
+            {
+                isleapy = true;
+
+            } else if ((year % 4 == 0))
+            {
+                isleapy = true;
+            } else
+
+            {
+                isleapy = false;
+
+            }
+
+            if (day == 0 || day >= 32){
+                System.out.println("Такого дня не существует");
+            }
+            else if ((day >= 30 && month == 2) || (day >= 31 && month == 4) || (day >= 31 && month == 6) || (day >= 31 && month == 9) || (day >= 31 && month == 11)){
+                System.out.println("В этом месяце нет такого дня");
+
+            } else if ((day == 29 && month == 2 && isleapy == false))
+            {
+                System.out.println("Год не високосный поэтому в феврале нет такого дня");
+
+            } else if ((day == 29 && month == 2 && isleapy == true)){
+                System.out.println("Дата: 29 Февраля " + year + " года");
+            } else if (month == 1){
+                System.out.println(day + " Января " + year + " года");
+                System.out.println("Твоя дата корректна");
+            } else if (month == 2){
+                System.out.println(day + " Февраля " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 3){
+                System.out.println(day + " Марта " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 4){
+                System.out.println(day + " Апреля " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 5){
+                System.out.println(day + " Мая " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 6){
+                System.out.println(day + " Июня " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 7){
+                System.out.println(day + " Июля " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 8){
+                System.out.println(day + " Августа " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 9){
+                System.out.println(day + " Сентября " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 10){
+                System.out.println(day + " Октября " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 11){
+                System.out.println(day + " Ноября " + year + " года");
+                System.out.println("Твоя дата корректна");
+            }else if (month == 12){
+                System.out.println(day + " Декабря " + year + " года");
+                System.out.println("Твоя дата корректна");
+            } else
+                System.out.println("Введён неверный месяц");
+
+        }
+        scan.close();
+
+
+
+
+
+    }
+}
