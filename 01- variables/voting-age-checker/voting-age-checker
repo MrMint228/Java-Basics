@@ -1,0 +1,31 @@
+import java.util.Scanner;
+// RUS простая проверка на возраст по данным с пользователя
+// Eng Simple check age varification
+public class VotingAgeChecker {
+    public static void main(String[] args) {
+        System.out.println("Для голосования на выборах необходимо быть совершеннолетним, введите ваш возраст:  ");
+
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNextInt()) {
+            int age = scan.nextInt();
+
+            if (age < 0) {
+                System.out.println("Ошибка возраст не может быть отрицательным");
+            }
+            if (age < 18) {
+                System.out.println("Вы не можете голосовать, так как являетесь несовершеннолетний");
+            } else {
+                System.out.println("Возраст подтвержден, пожалуйста голосуйте. ");
+            }
+        } else {
+            System.out.println("Вы вели не целое число, вы ошиблись");
+        }
+
+         scan.close();
+
+
+
+
+
+    }
+}
