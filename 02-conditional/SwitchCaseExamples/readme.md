@@ -6,6 +6,8 @@
 
 - [💲 Currency-Transfer](https://github.com/MrMint228/Java-Basics/blob/main/02-conditional/SwitchCaseExamples/currencytransfer) - конвертатор валют
 
+  -[ AreaOfTheFigure](https://github.com/MrMint228/Java-Basics/blob/main/02-conditional/SwitchCaseExamples/AreaOfTheFigure) - калькулятор площадей
+
 -Очень неоптимизированная программа для конвертаций валют друг в дргуа, пока что рубли(₽), евро(€), доллары($)," японские иены(¥) и британские фунты(£).
 
 **Особенности:**
