@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class SolvingQuadraticEquations {
+    public static void main(String[] args) {
+        System.out.println("Давай решим квадратное уравнение с целочисленными коэффициентами! ");
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введи значение первого коэффициента a: ");
+
+        if (scan.hasNextInt()) {
+            int a = scan.nextInt();
+            System.out.print("Введи значение второго коэффициента b: ");
+            int b = scan.nextInt();
+            System.out.print("Введи значение третьего коэффициента c: ");
+            int c = scan.nextInt();
+            double x;
+            double x1;
+            double x2;
+            double discriminant;
+
+            if (b == 0) {
+                if (-((double)c / a) > 0) {
+                    System.out.println("Так как b = 0, твоё уравнение неполное, оно имеет два решение: ");
+
+                    x1 = -Math.sqrt((double)c / a);
+                    x2 = Math.sqrt((double)c / a);
+
+                    System.out.println("x1 = " + x1 + " x2 = " + x2);
+
+                } else if (-((double)c / a) < 0) {
+                    System.out.println("Так как b = 0, твоё уравнение неполное, но оно не имеет решений.");
+                }
+            } else if (c == 0) {
+                System.out.println("Так как c = 0, твоё уравнение неполное, оно имеет два решение: ");
+                x1 = 0;
+                x2 = -((double)b / a);
+                System.out.println("x1 = " + x1 + " x2 = " + x2);
+            } else if (b == 0 && c ==0) {
+                System.out.println("Так как b = 0 и c = 0, твоё уравнение неполное, оно имеет одно решение: x = 0");
+
+            } else {
+                System.out.println("Твой уравнение полное, а значит имеет дискриминант: ");
+                discriminant = b * b - 4 * a * c;
+                System.out.println("D = " + discriminant);
+                if (discriminant > 0) {
+                    System.out.println("Дискриминант больше нуля, уравнение имеет два решения: ");
+
+                    x1 = (-b + Math.sqrt(discriminant)) / (double) (2 * a);
+
+                    x2 = (-b - Math.sqrt(discriminant)) / (double) (2 * a);
+
+                    System.out.println("x1 = " + x1 + " x2 = " + x2);
+
+                } else if (discriminant == 0) {
+                    System.out.println("Дискриминант равен нулю, уравнение имеет одно решение: ");
+                    x = -b / (double)(2 * a);
+                    System.out.println("x = " + x);
+
+                } else
+                    System.out.println("Дискриминант меньше нуля, ответ мнимый");
+
+
+            }
+
+
+        } else System.out.println("Вы ввели не целые числа, они пока что не поддерживаются");
+
+       scan.close();
+    }
+}
