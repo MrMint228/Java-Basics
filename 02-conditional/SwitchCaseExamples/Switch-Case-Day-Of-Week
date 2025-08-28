@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class dayofweek {
+    public static void main(String[] args){
+        System.out.print("Определим ваш день недели, введите число от 1 до 7: ");
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNextInt()){
+            int numberofday = scan.nextInt();
+
+                switch (numberofday){
+                    case 1:
+                        System.out.println("Сегодня  понедельник!");
+                        break;
+                    case 2:
+                        System.out.println("Сегодня вторник!");
+                        break;
+                    case 3:
+                        System.out.println("Сегодня среда!");
+                        break;
+                    case 4:
+                        System.out.println("Сегодня четверг!");
+                        break;
+                    case 5:
+                        System.out.println("Сегодня пятница!");
+                        break;
+                    case 6:
+                        System.out.println("Сегодня суббота!");
+                        break;
+                    case 7:
+                        System.out.println("Сегодня воскресенье!");
+                        break;
+                    default:
+                        System.out.println("Нет такого дня в неделе, ввести надо число от 1 до 7");
+
+                }
+
+
+        } else {
+            System.out.println("Вы ввели не целое число");
+        }
+        scan.close();
+
+
+    }
+}
