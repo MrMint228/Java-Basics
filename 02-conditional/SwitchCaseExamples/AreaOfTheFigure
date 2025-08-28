@@ -1,0 +1,131 @@
+import java.util.Scanner;
+
+public class AreaOfTheFigure {
+    public static void main(String[] args){
+
+        System.out.println("Давай-те посчитаем площадь вашей фигуры по изначально заданным данным!");
+        final double pi = 3.14;
+        System.out.println("Площадь какой фигуры вы хотите найти? " +
+                "Пожалуйста выберите из тех которые программа поддерживает а именно: круг, квадрат, ромб, треугольник,параллелограмма или ромб:");
+        Scanner scan = new Scanner(System.in);
+        String figure = scan.nextLine();
+
+
+        switch (figure){
+            case "круг":
+            case "к":
+                System.out.print("Для площади круга необходимо знать его радиус, введи его величину: ");
+                if (scan.hasNextDouble()){
+                    double radius = scan.nextDouble();
+                    scan.nextLine();
+                    double area = pi*radius*radius;
+                    double result = Math.round(area * 1000) / 1000.0;
+                    System.out.println("Отлично!  " +
+                            "Вот получившаяся площадь:  " + result);
+                    break;
+
+                }
+                else {
+                    System.out.println("ты не правильно ввёл радиус");
+                    scan.next();
+                }
+                break;
+
+            case "квадрат":
+            case "кв":
+                System.out.print("Для площади квадрата необходимо знать его сторону, введи её величину: ");
+                if (scan.hasNextDouble()){
+                    double side = scan.nextDouble();
+                    scan.nextLine();
+                    double area = side * side;
+                    double result = Math.round(area * 1000) / 1000.0;
+                    System.out.println("Отлично!  " +
+                            "Вот получившаяся площадь:  " + result);
+
+                    break;
+                } else{
+                System.out.println("ты не правильно ввёл величину стороны");
+                scan.next();}
+                break;
+
+            case "треугольник":
+            case "тр":
+                System.out.print("Для площади треугольника необходимо знать длину его стороны и высоты к ней, введи их величины. " +
+                        "\n Так его сторона равна:");
+                if (scan.hasNextDouble()){
+                    double side = scan.nextDouble();
+                    scan.nextLine();
+                    System.out.print("А высота к ней: ");
+                    double height = scan.nextDouble();
+                    scan.nextLine();
+                    double area = side *  height / 2;
+                    double result = Math.round(area * 1000) / 1000.0;
+                    System.out.println("Отлично!  " +
+                            "Вот получившаяся площадь:  " + result);
+                    break;
+
+                }
+                else{
+                System.out.println("ты не правильно ввёл одну из величин");
+                scan.next();
+                }
+                break;
+            case "ромб":
+            case "р":
+                System.out.print("Для площади ромба необходимо знать длину его стороны и высоты к ней, введи их величины. " +
+                        "\n Так его сторона равна:");
+                if (scan.hasNextDouble()){
+                    double side = scan.nextDouble();
+                    scan.next();
+                    System.out.print("А высота к ней: ");
+                    double height = scan.nextDouble();
+                    scan.next();
+                    double area = side *  height;
+                    double result = Math.round(area * 1000) / 1000.0;
+                    System.out.println("Отлично!  " +
+                            "Вот получившаяся площадь:  " + result);
+
+                    break;
+                } else {
+                System.out.println("ты не правильно ввёл одну из величин");
+                scan.next();
+                }
+                break;
+            case "параллелепипед":
+            case "п":
+                System.out.print("Для площади параллелограмма необходимо знать длины его диагоналей,  а также значение синуса между ними введи их величины. " +
+                        "\n Так его первая диагональ равна:");
+                if (scan.hasNextDouble()){
+                    double diganal1 = scan.nextDouble();
+                    scan.next();
+                    System.out.print("А вторая: ");
+                    double diganal2 = scan.nextDouble();
+                    scan.next();
+                    System.out.print("А синус: ");
+                    double sin = scan.nextDouble();
+                    if (sin < -1 || sin > 1){
+                        System.out.println("Синус такого значения иметь не может!");
+                        break;
+                    }
+                    double area = diganal1 *  diganal2 / 2 * sin;
+                    double result = Math.round(area * 1000) / 1000.0;
+                    System.out.println("Отлично!  " +
+                            "Вот получившаяся площадь:  " + result);
+
+                    break;
+                } else {
+
+                    System.out.println("ты не правильно ввёл одну из величин");
+                    scan.next();
+                }
+                break;
+            default:
+                System.out.println("Ошибка. Неизвестная фигура");
+                break;
+        }
+
+       scan.close();
+
+
+    }
+}
