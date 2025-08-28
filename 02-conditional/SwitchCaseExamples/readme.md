@@ -1,2 +1,2 @@
 ## 📁 Switch-Case Examples
-- [Day of Week Checker](05-switch-case/) - определение дней недели
+- [Day of Week Checker](02-conditional/SwitchCaseExamples/Switch-Case-Day-Of-Week) - определение дней недели
