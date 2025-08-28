@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class calculator {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Добро пожаловать в калькулятор!");
+        System.out.println("Введите первое число: ");
+        if (scan.hasNextFloat()){
+            float number1 = scan.nextFloat();
+            System.out.println("Введите операцию: ");
+            if (scan.hasNextLine()) {
+                char operation = scan.next().charAt(0);
+
+                if (operation != '+' && operation != '/' && operation != '*' && operation != '-')
+                {
+                    System.out.println("Вы неправильно ввели операцию. Используйте +, -, *, /");
+
+                } else {
+                    System.out.println("Введите второе число: ");
+                    if (scan.hasNextFloat()){
+                        float number2 = scan.nextFloat();
+                        if (number2 ==0 && operation == '/'){
+                            System.out.println("На ноль делить нельзя");
+                        }
+                        else if  (operation == '+'){
+                            float calculation = number1 + number2;
+
+                            System.out.println("Результат суммы двух чисел: " + calculation);
+                        } else if (operation == '-') {
+                            float calculation = number1 - number2;
+
+                            System.out.println("Результат разности двух чисел: " + calculation);
+                        } else if (operation == '*') {
+                            float calculation = number1 * number2;
+
+                            System.out.println("Результат произведения двух чисел: " + calculation);
+                        } else{
+                            float calculation = number1 / number2;
+
+                            System.out.println("Результат отношения двух чисел: " + calculation);
+                        }
+
+                    } else System.out.println("Второе число введено неправильно");
+                }
+
+            } else
+                System.out.println("ВЫ неправильно ввели операцию. Используйте +, -, *, /");
+
+
+
+        } else System.out.println("Вы неправильно ввели первое число");
+        scan.close();
+
+
+
+
+    }
+}
