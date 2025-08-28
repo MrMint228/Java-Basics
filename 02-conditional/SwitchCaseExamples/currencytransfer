@@ -1,0 +1,162 @@
+import java.util.Scanner;
+public class currencytransfer {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите сколько хотите перевести в другую валюту, с какой валюты и на какую");
+        System.out.println("На данный момент в программе поддерживаются такие валюты, как рубли(₽), евро(€), доллары($)," +
+                " японские иены(¥) и британские фунты(£), вводить нужно именно символы соответствующих валют без скобок");
+        System.out.print("Итак, ваша сумма:  ");
+        if (scan.hasNextDouble()){
+            double money = scan.nextDouble();
+            scan.nextLine();
+            System.out.print("Теперь надо ввести поддерживаемую валюту из которой будем конвертировать: ");
+            char currency = scan.nextLine().charAt(0);
+            
+            switch (currency){
+                case '₽':
+                    System.out.print("Теперь введите в какую валюту вы хотите перевести сумму: ");
+                    char currency1 = scan.nextLine().charAt(0);
+                    switch (currency1){
+                        case '₽':
+                            System.out.println("Та же самая сумма " + money);
+                            break;
+                        case '€':
+                            double currency2 = money * 0.011;
+                            System.out.println("Конвертированная сумма: " + currency2);
+                            break;
+                        case '$':
+                            double currency3 = money * 0.012;
+                            System.out.println("Конвертированная сумма: " + currency3);
+                            break;
+                        case '¥':
+                            double currency4 = money * 1.83;
+                            System.out.println("Конвертированная сумма: " + currency4);
+                            break;
+                        case '£':
+                            double currency5 = money * 0.0092;
+                            System.out.println("Конвертированная сумма: " + currency5);
+                            break;
+                        default:
+                            System.out.println("Вы ввели неправильно вторую валюту");
+                    }
+                    break;
+                    case '€':
+                    System.out.print("Теперь введите в какую валюту вы хотите перевести сумму: ");
+                    char currency6 = scan.nextLine().charAt(0);
+                    switch (currency6){
+                        case '₽':
+                            double currency7 = money * 93.68;
+                            System.out.println("Конвертированная сумма: " + currency7);
+                            break;
+                        case '€':
+                            System.out.println("Та же самая сумма " + money);
+                            break;
+                        case '$':
+                            double currency8 = money * 1.17;
+                            System.out.println("Конвертированная сумма: " + currency8);
+                            break;
+                        case '¥':
+                            double currency9 = money * 171.63;
+                            System.out.println("Конвертированная сумма: " + currency9);
+                            break;
+                        case '£':
+                            double currency10 = money * 0.86;
+                            System.out.println("Конвертированная сумма: " + currency10);
+                            break;
+                        default:
+
+                            System.out.println("Вы ввели неправильно вторую валюту");
+                    }
+                    break;
+                case '$':
+                    System.out.print("Теперь введите в какую валюту вы хотите перевести сумму: ");
+                    char currency7 = scan.nextLine().charAt(0);
+                    switch (currency7){
+                        case '₽':
+                            double currency8 = money * 80.50;
+                            System.out.println("Конвертированная сумма: " + currency8);
+                            break;
+                        case '€':
+                            double currency9 = money * 0.86;
+                            System.out.println("Конвертированная сумма: " + currency9);
+                            break;
+                        case '$':
+                            System.out.println("Та же самая сумма " + money );
+                            break;
+                        case '¥':
+                            double currency10 = money * 147.06;
+                            System.out.println("Конвертированная сумма: " + currency10);
+                            break;
+                        case '£':
+                            double currency11 = money * 0.74;
+                            System.out.println("Конвертированная сумма: " + currency11);
+                            break;
+                        default:
+
+                            System.out.println("Вы ввели неправильно вторую валюту");
+                    }
+                    break;
+                    case '¥':
+                    System.out.print("Теперь введите в какую валюту вы хотите перевести сумму: ");
+                    char currency12 = scan.nextLine().charAt(0);
+                    switch (currency12){
+                        case '₽':
+                            double currency13 = money * 0.55;
+                            System.out.println("Конвертированная сумма: " + currency13);
+                            break;
+                        case '€':
+                            double currency14 = money * 0.0058;
+                            System.out.println("Конвертированная сумма: " + currency14);
+                            break;
+                        case '$':
+                            double currency15 = money * 0.0068;
+                            System.out.println("Конвертированная сумма: " + currency15);
+                            break;
+                        case '¥':
+                            System.out.println( "Та же самая сумма " + money );
+                            break;
+                        case '£':
+                            double currency16 = money * 0.0050;
+                            System.out.println("Конвертированная сумма: " + currency16);
+                            break;
+                        default:
+
+                            System.out.println("Вы ввели неправильно вторую валюту");
+                    }
+                    break;
+                    case '£':
+                    System.out.print("Теперь введите в какую валюту вы хотите перевести сумму: ");
+                    char currency17 = scan.nextLine().charAt(0);
+                    switch (currency17){
+                        case '₽':
+                            double currency18 = money * 108.69;
+                            System.out.println("Конвертированная сумма: " + currency18);
+                            break;
+                        case '€':
+                            double currency19 = money * 1.16;
+                            System.out.println("Конвертированная сумма: " + currency19);
+                            break;
+                        case '$':
+                            double currency20 = money * 1.35;
+                            System.out.println("Конвертированная сумма: " + currency20);
+                            break;
+                        case '¥':
+                            double currency21 = money * 198.68;
+                            System.out.println("Конвертированная сумма: " + currency21);
+                            break;
+                        case '£':
+
+                            System.out.println("Та же самая сумма " + money );
+                            break;
+                        default:
+
+                            System.out.println("Вы ввели неправильно вторую валюту");
+                    }
+                default:
+                    System.out.println("Вы ввели неправильно первую валюту");
+                    break;
+            }
+        } else System.out.println("Вы ввели неправильно сумму денег");
+        scan.close();
+    }
+}
