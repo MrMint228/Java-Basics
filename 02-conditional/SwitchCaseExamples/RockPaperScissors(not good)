@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+
+public class RockPaperScissors {
+    public static void main(String[] args){
+        System.out.println("Давай сыграем в камень, ножницы, бумага!");
+        String ComputerTurn = "ножницы";
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNextLine()){
+            String Playerturn = scan.nextLine();
+            switch (Playerturn){
+                case "камень":
+                    System.out.println("Ты победил");
+                    break;
+                case "ножницы":
+                    System.out.println("Ничья");
+                    break;
+                case "бумага":
+                    System.out.println("Ты проиграл");
+                    break;
+                default:
+                    System.out.println("Только камень, ножницы или бумагу можно ввести");
+            }
+        } else System.out.println("Ошибка");
+        scan.next();
+        scan.close();
+
+
+
+    }
+
+}
