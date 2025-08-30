@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class BMI {
+    public static void main(String[] args){
+        System.out.println("Давайте рассчитаем ваш индекс массы тела. Введите ваш рост в см а затем массу тела в килограммах: ");
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNextDouble()){
+            double height = scan.nextDouble();
+            double heightInMeters = height /100;
+            System.out.print("А теперь нужно узнать ваш вес: ");
+            double weight = scan.nextDouble();
+            System.out.println("Сейчас посчитаю...");
+            double coefficient = Math.round(weight / (heightInMeters * heightInMeters)) * 100.0 / 100;
+            if (coefficient <= 17){
+                System.out.println("У вас выраженный дефицит массы тела. Ваш коэффициент: " + coefficient);
+
+            } else if (coefficient > 17 && coefficient <= 18.5){
+                System.out.println("У вас дефицит массы тела. Ваш коэффициент: " + coefficient);
+            } else if (coefficient > 18.5 && coefficient <= 25) {
+                System.out.println("Вы в норме. Ваш коэффициент: " + coefficient);
+                
+            } else if (coefficient > 25 && coefficient <= 30) {
+                System.out.println("У вас избыточная масса тела, предожирение. Ваш коэффициент: " + coefficient);
+                
+            } else if(coefficient > 30 && coefficient <= 35){
+                System.out.println("У вас ожирение первой степени");
+            } else if (coefficient > 35 && coefficient < 40){
+                System.out.println("У вас ожирение второй степени. Ваш коэффициент: " + coefficient);
+            }else if (coefficient >= 40)
+            {
+                System.out.println("У вас ожирение третьей степени. Ваш коэффициент: " + coefficient);}
+            else System.out.println("Ошибка");
+        } else System.out.println("Вы ввели не число");
+        scan.next();
+        scan.close();
+
+    }
+}
