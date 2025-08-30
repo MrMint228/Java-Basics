@@ -1,0 +1,80 @@
+
+        import java.util.Scanner;
+
+        public class bankomat {
+            public static void main(String[] args){
+                System.out.println("Добро подаловать в банкомат, введите ваш пинкод");
+                Scanner scan = new Scanner(System. in);
+                double balance = 25631.2563;
+                String pincode;
+                if (scan.hasNextLine()){
+                    pincode = scan.nextLine();
+                    if (pincode.equals("123456")){
+                        System.out.println("Пинкод верный! Ваш баланс: " + balance);
+                        System.out.println("Доступные операции снятие, баланс и пополнение." + " Что вы хотите сделать?");
+                        String operation = scan.nextLine();
+                        switch (operation){
+                            case "снятие" : System.out.println("Сколько вы хотите снять?");
+                                if (scan.hasNextDouble()){
+
+                                    double amount = scan.nextDouble();
+                                    if (amount > 0) {
+                                        if (amount <= balance){
+
+
+                                            balance = balance - amount;
+                                            System.out.println("Успешно! Ваш баланс теперь: " + balance);
+
+
+                                        } else
+                                        {
+                                            System.out.println("Недостаточно средств для операции");
+                                        }
+                                    } else {System.out.println("Число должно быть положительным!");}
+                             } else
+                            {
+                                System.out.println("Вы неправильно ввели сумму вывода");
+                                scan.next();
+                            }
+                            break;
+                            case "пополнение" : System.out.println("НА сколько вы хотите пополнить?");
+                            if (scan.hasNextDouble())
+                            {
+
+                                double deposit = scan.nextDouble();
+
+                                if (deposit > 0){
+                                    balance = balance + deposit;
+                                System.out.println("Успешно! ваш баланс: " + balance);}
+                                else
+                                {
+                                    System.out.println("Сумма должна быть положительной для пополнения");
+
+                                }
+
+
+                            }  else {System.out.println("Вы ввели не число");
+                                scan.next();}
+                            break;
+
+                            case "баланс" : System.out.println("Дублирую, ваш баланс: " + balance);
+                            break;
+                            default:
+                                System.out.println("Ошибка. Неизвестная операция");
+
+                                break;
+
+                        }
+                    } else {
+                        System.out.println("Пинкод неверный!");
+
+                }
+
+                    scan.close();
+
+
+
+            }
+
+        }
+        }
