@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class simplecircle {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Давай сделаем таблицу для выбранного тобой числа, введите положительное число от 1 до 9: ");
+        int max = 10;
+        int base = 0;
+        int product;
+        if (scan.hasNextInt()) {
+            int number = scan.nextInt();
+            while (number < 0 || number > 9) {
+                System.out.println("Вы вели некорректное число, введите правильное:");
+
+                number = scan.nextInt();
+            }
+                System.out.println("Давайте сделаем табличку!");
+            System.out.println("Таблица умножения на " + number + ":");
+            System.out.println("======================");
+                while (base < max) {
+                    base++;
+                    product = number * base;
+                    System.out.println(number + " * " + base + " = " + product );
+
+                }
+
+            System.out.println("╔══════════════════════════╗");
+            System.out.println("║      Цикл завершён!      ║");
+            System.out.println("╚══════════════════════════╝");
+            }
+
+         else {
+            System.out.println("Ошибка. Вы ввели не целое число");
+            scan.next();
+
+        }
+        scan.close();
+    }
+}
