@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class simplecircle {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Давайте пробижимся по целым числам, введите положительное число: ");
+        if (scan.hasNextInt()) {
+            int b = scan.nextInt();
+            while (b<0) {
+                System.out.println("Вы вели отрицательное число, введите положительное:");
+
+                b = scan.nextInt();
+            }
+                int a = 0;
+                System.out.println("Давайте начнём цикл!");
+                while (a < b) {
+                    a++;
+                    System.out.println("текущие значение переменной: " + a);
+                }
+                System.out.println("Цикл завершён!");
+            }
+
+         else {
+            System.out.println("Ошибка. Вы ввели не целое число");
+            scan.next();
+
+        }
+        scan.close();
+    }
+}
