@@ -1,0 +1,49 @@
+import javax.xml.transform.Source;
+import java.util.Scanner;
+
+public class nalog {
+    public static void main(String[] args) {
+        System.out.println("Давайте рассчитаем стоимость парковки");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("На сколько вы хотите припарковаться? максимум 24 часа! ");
+        double price;
+        double priceperHour;
+
+        if (scan.hasNextDouble()) {
+            double HoursOfParking = scan.nextDouble();
+            scan.nextLine();
+            if (HoursOfParking > 0)
+            {
+              if (HoursOfParking <= 2){
+                  System.out.println("Отлично, парковка бесплатна!");
+              } else if (HoursOfParking <= 5){
+                  System.out.println("Так свыше 2 часов придётся платить по 50 за час (3максимум)");
+                  priceperHour = 50;
+                  price = (HoursOfParking - 2) * priceperHour;
+                  System.out.println("Цена за парковку: " + price);
+
+              } else if (HoursOfParking > 5){
+                  System.out.println("Больше 5 часов по 100 за час");
+                  double for3hours = 150;
+                  priceperHour = 100;
+                  price = (HoursOfParking - 5) * 100 + for3hours;
+                  if (price > 500){
+                      price = 500;
+                      System.out.println("Мы договаривались максимум 24 часа, а значит максимальная цена(то что ты должен заплатить): " + price);
+                  } else {
+                      System.out.println("Цена за парковку: " + price);
+                  }
+              }
+
+
+            } else {
+                System.out.println("Число должно быть больше нуля!");
+                scan.next();
+            }
+        } else {
+            System.out.println("Ошибка вы ввели не число!");
+            scan.next();
+        }
+        scan.close();
+    }
+}
