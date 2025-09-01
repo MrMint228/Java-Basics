@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class SimpleNumber {
+    public static void main(String[] args) {
+        System.out.println("Давай проверим простое ли у тебя число?");
+        System.out.print("Введи натуральное и целое число число: ");
+        Scanner scan = new Scanner(System.in);
+        int divider = 2;
+        int ratio;
+        if (scan.hasNextInt()) {
+            int number = scan.nextInt();
+
+            if (number > 0) {
+
+
+                while (divider < number) {
+                    ratio = number % divider;
+                    System.out.println("остаток от деления на " + divider +": " + ratio);
+                    divider++;
+                    if (ratio == 0){
+                        System.out.println("Проверка числа завершена");
+                        System.out.println("твоё число не простое");
+                        return;
+                    }
+
+                }
+                System.out.println("Проверка числа завершена");
+                System.out.println("твоё число простое!");
+
+
+            } else {
+                System.out.println("ты ввёл не целое число!");
+                scan.next();
+
+
+            }
+        }
+    }
+}
