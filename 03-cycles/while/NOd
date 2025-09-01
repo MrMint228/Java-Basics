@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class simplecircle {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Давай сделаем НОД двух числе, то есть алгоритм евклида, введите положительное два положительных числа: ");
+        int NOD ;
+        if (scan.hasNextInt()) {
+            int a = scan.nextInt();
+            System.out.println(" А второе:");
+            int b = scan.nextInt();
+            if (a == b && b == 0){
+                System.out.println("НОД не определен, так как оба числа получились 0");
+                return;
+            }
+            while (a < 0 || b < 0) {
+                System.out.println("Вы вели некорректное числа, введите правильные:");
+                 a = scan.nextInt();
+                 b = scan.nextInt();
+            }
+                System.out.println("Давайте сделаем НОД этих чисел!");
+
+            while (a !=0 && b !=0) {
+                  if (a > b){
+                      a %= b;
+                      System.out.println("a равно: " + a);
+                  }
+                  else b %= a;
+                System.out.println("b равно: " + b);
+
+            }
+            if (a == 0){
+                 NOD = b;
+            } else
+            {
+                NOD = a;
+            }
+
+            System.out.println("╔══════════════════════════╗");
+            System.out.println("║      НОД    НАЙДЕН!      ║");
+            System.out.println("╚══════════════════════════╝");
+
+            System.out.println("Nod = " + NOD );
+            }
+
+         else {
+            System.out.println("Ошибка. Вы ввели не целое число");
+            scan.next();
+
+        }
+        scan.close();
+    }
+}
