@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class BetterCakcukator {
@@ -14,8 +13,7 @@ public class BetterCakcukator {
             double number2 = scan.nextDouble();
             scan.nextLine();
             System.out.println("Открываю калькулятор, пожалуйста введите число от 0 до 6");
-
-                while (running){
+            while (running){
                     System.out.println("╔══════════════════════════════════════════════════════════════════════════╗");
                     System.out.println("║                          КАЛЬКУЛЯТОР    by mrmint228                     ║");
                     System.out.println("║ 0 - закрытие калькулятора                                                ║");
@@ -75,36 +73,15 @@ public class BetterCakcukator {
                         default:
                             System.out.println("Неверный выбор \n ");
                     }
-
-
-
-
-
                     } else {
                         System.out.println("Вы ввели неправильное число");
                         scan.next();
                     }
-
-
                 }
-
-
-
-
-
-
         } else
         {
             System.out.println("Ошибка. Вы ввели не числа");
             scan.next();
         }
-
-
-
-
-
     }
-
-
-
 }
