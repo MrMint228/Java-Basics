@@ -1,0 +1,110 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class BetterCakcukator {
+    public static void main(String[] args){
+        System.out.println("Добро пожаловать в калькулятор! Введите два числа над которыми вы хотите провести операции:");
+        Scanner scan = new Scanner(System.in);
+        boolean running = true;
+        if (scan.hasNextDouble()){
+            System.out.print("Введи первое число: ");
+            double number1 = scan.nextDouble();
+            scan.nextLine();
+            System.out.print("Отлично! Введи второе число: ");
+            double number2 = scan.nextDouble();
+            scan.nextLine();
+            System.out.println("Открываю калькулятор, пожалуйста введите число от 0 до 6");
+
+                while (running){
+                    System.out.println("╔══════════════════════════════════════════════════════════════════════════╗");
+                    System.out.println("║                          КАЛЬКУЛЯТОР    by mrmint228                     ║");
+                    System.out.println("║ 0 - закрытие калькулятора                                                ║");
+                    System.out.println("║ 1 - выбор новых чисел                                                    ║");
+                    System.out.println("║ 2 - сложение чисел                                                       ║");
+                    System.out.println("║ 3 - вычитание чисел                                                      ║");
+                    System.out.println("║ 4 - умножение чисел                                                      ║");
+                    System.out.println("║ 5 - деление чисел                                                        ║");
+                    System.out.println("║ 6 - нахождение остатка от деления чисел                                  ║");
+                    System.out.println("║ Примечание. Вычитание и т.д происходит, как (первое число) - (второе)    ║");
+                    System.out.println("╚══════════════════════════════════════════════════════════════════════════╝");
+                    if (scan.hasNextInt()){
+                    int operation = scan.nextInt();
+                    switch (operation){
+                        case 0:
+                            System.out.println("Калькулятор закрыт");
+                            running = false; // ← Меняем флаг вместо return
+                            break;
+                        case 1:
+                            System.out.println("Выберите два новых числа: ");
+                            number1 = scan.nextDouble();
+                            scan.nextLine();
+                            number2 = scan.nextDouble();
+                            scan.nextLine();
+                            System.out.println("Новые числа: " + number1 + " и " + number2 + "\n");
+                            break;
+                        case 2:
+                            double summa = number1 + number2;
+                            System.out.println("Результат сложение чисел " + number1 +" и "+ number2 + " = " + summa + "\n");
+                            break;
+                        case 3:
+                            double difference = number1 - number2;
+                            System.out.println("Результат разности чисел " + number1 +" и "+ number2 + " = " + difference + "\n");
+                            break;
+                        case 4:
+                            double product = number1 * number2;
+                            System.out.println("Результат произведения чисел " + number1 +" и "+ number2 + " = " + product + "\n");
+                            break;
+                        case 5:
+                            double ratio = number1 / number2;
+                            if (number2 !=0) {
+                                System.out.println("Результат деления чисел " + number1 + " и " + number2 + " = " + ratio + "\n");
+                                break;
+                            } else {
+                                System.out.println("На ноль делить низя!\n " );
+                                break;
+                            }
+                        case 6:
+                            double remainder = number1 % number2;
+                            if (number2 !=0) {
+                                System.out.println("Результат нахождения остатка от деления чисел " + number1 + " и " + number2 + " = " + remainder + "\n");
+                                break;
+                            } else {
+                                System.out.println("На ноль делить низя ! \n ");
+                                break;
+                            }
+                        default:
+                            System.out.println("Неверный выбор \n ");
+                    }
+
+
+
+
+
+                    } else {
+                        System.out.println("Вы ввели неправильное число");
+                        scan.next();
+                    }
+
+
+                }
+
+
+
+
+
+
+        } else
+        {
+            System.out.println("Ошибка. Вы ввели не числа");
+            scan.next();
+        }
+
+
+
+
+
+    }
+
+
+
+}
