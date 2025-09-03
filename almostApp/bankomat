@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class bankomat2 {
+    public static void main(String[] args){
+        System.out.println("╔════════════════════════════════════════╗");
+        System.out.println("║      Добро пожаловать в банкомат!      ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        boolean run1 = true;
+        boolean run2 = true;
+        boolean correct;
+        int attempt = 5;
+        final int pinkod = 19738246;
+        double summa = 1025963;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите пароль от банковской карты!");
+        if (scan.hasNextInt()){
+            while (run1){
+                int userdata = scan.nextInt();
+                if (userdata == pinkod) {
+                    System.out.println("Отлично! Добро пожаловать! Ваш баланс " + summa);
+                    run1 = false;
+                    while(run2){
+                        System.out.println("╔══════════════════════════════════════════════════════════════════════════╗");
+                        System.out.println("║                          Банкомат    by mrmint228                        ║");
+                        System.out.println("║ 0 - Выход из меню банкомата                                              ║");
+                        System.out.println("║ 1 - снятие наличных                                                      ║");
+                        System.out.println("║ 2 - пополнение                                                           ║");
+                        System.out.println("║ 3 - Проверка баланса                                                     ║");
+                        System.out.println("╚══════════════════════════════════════════════════════════════════════════╝");
+                        System.out.println("Введите номер операции(от 0 до 3)");
+                        int operation = scan.nextInt();
+                        switch (operation){
+                            case(0):
+                                System.out.println("Заберите свою карту!");
+                                System.out.println("Введите пароль от банковской карты!");
+                                run1 = true;
+                                run2 = false;
+                                System.out.println(); // ← Добавить эту строку
+                                break;
+
+                            case(1):
+                                System.out.println("Сколько вы хотите снять?");
+                                double withdrawal = scan.nextDouble();
+                                if (withdrawal > summa){
+                                    System.out.println("Операция невозможна, недостаточно денег");
+                                    break;
+
+                                } else if (withdrawal == 0){
+                                    System.out.println("операция бессмысленна");
+                                    break;
+                                } else if (withdrawal < 0) {
+                                    System.out.println("Число должно быть положительным!");
+                                    break;
+
+                                } else {
+                                    System.out.println("Успешно! заберите деньги");
+                                    summa -= withdrawal;
+                                    break;
+                                }
+                            case (2):
+                                System.out.println("Сколько вы хотите положить?");
+                                double deposit = scan.nextDouble();
+                                summa += deposit;
+                                break;
+                            case (3):
+                                System.out.println("Ваш баланс: " + summa);
+                                break;
+                        }
+                    }
+                } else {
+                        attempt --;
+                        System.out.println("❌Пароль неверный, пробуйте еще раз, у вас осталось попыток: " + attempt);
+                    if (attempt == 0){
+                        System.out.println("\n" + "Карта заблокирована!\uD83D\uDD12");
+                        run1 = false;
+                        break;
+                    }
+                }
+            }
+        } else {
+            System.out.println("пароль должен содержать только целые числа!");
+            scan.next();
+        }
+    }
+}
