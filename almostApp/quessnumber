@@ -1,0 +1,148 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class guessnumber {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+        boolean run1 = true;
+        boolean run2 = true;
+        int attempts;
+        int choice;
+        int rundomnumber;
+
+        System.out.println("╔═════════════════════════════════════════════════╗");
+        System.out.println("║       Добро пожаловать в игру угадай число!     ║");
+        System.out.println("╚═════════════════════════════════════════════════╝");
+
+        while (run1) {
+            System.out.println("Выберите сложность: easy(e), medium(m), hard(h)");
+            String difficult = scan.nextLine();
+
+            switch (difficult) {
+                case ("easy"):
+                case ("e"):
+                    run2 = true;
+                    System.out.println("Хорошо! \n");
+                    attempts = 3;
+                    System.out.println("Итак, я загадал число от 1 до 5, у тебя 3 попытки, при неудаче даю подсказку;)");
+                    System.out.print("Пробуй: ");
+                    rundomnumber = random.nextInt(5) + 1;
+
+                    while (run2) {
+                        choice = scan.nextInt();
+                        scan.nextLine();
+
+                        if (choice == rundomnumber) {
+                            System.out.println("Победа!!!");
+                            run2 = false;
+                            break;
+                        } else if (choice > rundomnumber){
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число поменьше" + "\n" +  "Осталось попыток: " + attempts);
+
+                        } else {
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число побольше" +  "\n" +  "Осталось попыток: " + attempts);
+                        }
+                            if (attempts == 0) {
+                            System.out.println("Попытки закончились, ты проиграл :(");
+                                System.out.println("Загаданное число: " + rundomnumber);
+                            run2 = false;
+                            break;
+                        }
+                    }
+                    break;
+                case ("medium"):
+                case ("m"):
+                    run2 = true;
+                    System.out.println("Хорошо! \n");
+                    attempts = 3;
+                    System.out.println("Итак, я загадал число от 1 до 10, у тебя 3 попытки, при неудаче даю подсказку;)");
+                    System.out.print("Пробуй: ");
+                    rundomnumber = random.nextInt(10) + 1;
+
+                    while (run2) {
+                        choice = scan.nextInt();
+                        scan.nextLine();
+
+                        if (choice == rundomnumber) {
+                            System.out.println("Победа!!!");
+                            run2 = false;
+                            break;
+                        } else if (choice > rundomnumber){
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число поменьше \n Осталось попыток: " + attempts);
+
+                            } else {
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число побольше" +  "\n" +  "Осталось попыток: " + attempts);
+                             }
+                        if (attempts == 0) {
+                            System.out.println("Попытки закончились, ты проиграл :(");
+                            System.out.println("Загаданное число: " + rundomnumber);
+                            run2 = false;
+                            break;
+
+                        }
+
+                    }
+                    break;
+
+                case ("hard"):
+                case ("h"):
+                    run2 = true;
+                    System.out.println("Хардкор!!!");
+                    attempts = 2;
+                    System.out.println("Итак, я загадал число от 1 до 100, у тебя 2 попытки, при неудаче даю подсказку;)");
+                    System.out.print("Пробуй: ");
+                    rundomnumber = random.nextInt(100) + 1;
+
+                    while (run2) {
+                        choice = scan.nextInt();
+                        scan.nextLine();
+
+                        if (choice == rundomnumber) {
+                            System.out.println("Победа!!!");
+                            run2 = false;
+                            break;
+                        } else if (choice > rundomnumber){
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число поменьше \n Осталось попыток: " + attempts);
+
+                        } else {
+                            attempts--;
+                            System.out.println("Неправильно, попробуй число побольше" +  "\n" +  "Осталось попыток: " + attempts);
+                        }
+                        if (attempts == 0) {
+                            System.out.println("Попытки закончились, ты проиграл :(");
+                            System.out.println("Загаданное число: " + rundomnumber);
+                            run2 = false;
+                            break;
+                        }
+                    }
+                    break;
+                case ("secret"):
+                case ("s"):
+                    System.out.println("Итак, я загадал число 1;)");
+                    System.out.print("Пробуй: ");
+                    run2 =true;
+                    while (run2){
+                        choice = scan.nextInt();
+                        scan.nextLine();
+
+                        if (choice == 1){
+                            System.out.println("Победа!");
+                            run2 = false;
+                            break;
+                        } else System.out.println("Я загадал единицу)))");
+                    }
+                    break;
+                default:
+                    System.out.println("Введи сложность правильно!");
+                    break;
+        }
+    }
+
+    }
+}
