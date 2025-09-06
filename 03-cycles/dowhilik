@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class dowhilik {
+    public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    int correctpin = 1234;
+    int userPin;
+        do {
+            System.out.println("---------------------------------------------------");
+            System.out.println("Введите пинкод:");
+            userPin = scan.nextInt();
+            scan.nextLine();
+            System.out.println("---------------------------------------------------");
+                if (userPin != correctpin) {
+                System.out.println("Пинкод неверный!");
+                }
+
+
+         } while (userPin != correctpin);
+        System.out.println("Пинкод верный!\n");
+        System.out.println("Секретное сообщение: " + "Победа будет за нами!");
+        System.out.println("---------------------------------------------------");
+        scan.close();
+
+    }
+}
