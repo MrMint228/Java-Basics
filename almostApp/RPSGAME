@@ -10,8 +10,11 @@ public class RPSGAME {
         int compscore = 0;
         String compchoise;
         boolean run = true;
+        boolean playAgain = true;
         String choise;
         String[] game = {"камень", "ножницы", "бумага"};
+        do {
+
 
         System.out.println("╔════════════════════════════════════╗");
         System.out.println("║       КАМЕНЬ НОЖНИЦЫ БУМАГА!       ║");
@@ -35,18 +38,18 @@ public class RPSGAME {
                 System.out.println("Компьютер выбрал " + compchoise);
                 if (choise.equals(compchoise)) {
                     System.out.println("Ничья, вы оба выбрали: " + choise);
-
+                    continue;
                 } else if ((choise.equals("камень") && compchoise.equals("ножницы"))
                         || (choise.equals("ножницы") && compchoise.equals("бумага"))
                         || (choise.equals("бумага") && compchoise.equals("камень"))) {
                     System.out.println("Победа! " + choise + " бьёт " + compchoise);
                     userscore++;
-
+                    continue;
 
                 } else {
                     System.out.println("Поражение! " + compchoise + " бьёт " + choise);
                     compscore ++;
-
+                    continue;
                 }
 
 
@@ -64,6 +67,18 @@ public class RPSGAME {
             System.out.println("Финальный счет: " + userscore + "-" + compscore);
             System.out.println("-------------------------------");
         }
+            System.out.println("Хотите сыграть снова? y/n ");
+        String answer = scan.nextLine().toLowerCase().trim();
+        if (answer.equals("y")){
+        } else {
+            playAgain = false;
+            System.out.println("\nНу тогда пока!");
+        }
+
+        userscore = 0;
+        compscore = 0;
+
+        } while (playAgain);
         scan.close();
     }
 }
