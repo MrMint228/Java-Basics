@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class mass1 {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int[] gg = new int[7];
+        boolean foundDuplicates = false;
+        for(int i = 0; i < gg.length; i++){
+            System.out.println("Введи значение элемента массива номер " + i +":");
+            int number = scan.nextInt();
+            gg[i] = number;
+        }
+        System.out.println("Поиск дубликатов...");
+        for(int i = 0; i < gg.length; i++){
+            for(int a = i + 1; a < gg.length; a++){
+//                if (a==i){
+//                    continue;
+//                }
+                if (gg[i] == gg[a]){
+                    System.out.println("Дубликат найден!");
+                    System.out.println("Это " + gg[i] +  " и " + gg[a] + " c номерами " + i + " и " + a);
+                    foundDuplicates = true;
+                }
+
+
+
+
+            }
+        }
+        if( foundDuplicates != true) {
+            System.out.println("дубликатов нет!");
+        }
+        scan.close();
+
+
+    }
+}
