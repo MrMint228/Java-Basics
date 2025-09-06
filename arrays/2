@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class mass {
+    public static void main(String[] args)
+    {
+        int summa =0;
+
+        Scanner scan = new Scanner(System.in);
+        int[] poka = new int[7];
+        for(int i = 0; i < poka.length; i++){
+            System.out.println("Введи значение элемента массива номер " + i +":");
+            int number = scan.nextInt();
+            poka[i] = number;
+        }
+        int maxelement =  poka[0];
+        for(int i = 0; i < poka.length; i++){
+            summa += poka[i];
+        }
+        for(int i = 0; i < poka.length; i++){
+            if (maxelement < poka[i]){
+                maxelement = poka[i];
+            }
+
+        }
+        System.out.println("\nСумма элементов массива: " + summa);
+        System.out.println("Maximum: " + maxelement);
+scan.close();
+
+    }
+}
