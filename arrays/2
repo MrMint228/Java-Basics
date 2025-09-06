@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class mass {
@@ -16,15 +17,54 @@ public class mass {
         for(int i = 0; i < poka.length; i++){
             summa += poka[i];
         }
+        int numberofmax =0;
         for(int i = 0; i < poka.length; i++){
             if (maxelement < poka[i]){
                 maxelement = poka[i];
+                numberofmax = i;
             }
 
         }
+        int numberofmin =0;
+        int minelement = poka[0];
+        for(int i = 0; i < poka.length; i++){
+            if (minelement > poka[i]){
+                minelement = poka[i];
+                numberofmin = i;
+            }
+
+        }
+        System.out.println("Какое число нужно поискать в массииве данных?");
+        int userrequest = scan.nextInt();
+        int numberofuserrequest = 0;
+        for(int i = 0; i < poka.length; i++){
+            if (userrequest == poka[i]){
+                System.out.println("Элемент найдет!");
+                numberofuserrequest = i;
+                break;
+            }
+            System.out.println("Такого элемента не существует!");
+            break;
+
+        }
+        int numberofeven =0;
+        int numberofodd =0;
+        for(int i = 0; i < poka.length; i++){
+            if (poka[i] % 2 ==0){
+                numberofeven ++;
+            } else
+                numberofodd ++;
+
+        }
+
+        double midle = (double)summa / poka.length;
+
         System.out.println("\nСумма элементов массива: " + summa);
-        System.out.println("Maximum: " + maxelement);
-scan.close();
+        System.out.println("Среднее значение элементов массива: " + midle );
+        System.out.println("Maximum: " + maxelement + " его номер в массиве " + numberofmax);
+        System.out.println("Minimum: " + maxelement + " его номер в массиве " + numberofmin);
+        System.out.println("количество чётных чисел: " + numberofeven + " нечётных: " + numberofodd);
+        scan.close();
 
     }
 }
