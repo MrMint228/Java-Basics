@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class mass1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] gg = new int[7];
+        for (int i = 0; i < gg.length; i++) {
+            System.out.println("Введи значение элемента массива номер " + i + ":");
+            int number = scan.nextInt();
+            gg[i] = number;
+        }
+        int lastelement = gg[gg.length-2];
+        int lastelement1 = gg[gg.length - 1];
+        for (int i = gg.length - 1; i >= 2; i--) {
+           gg[i] = gg[i-2];
+
+
+        }
+        gg[0] = lastelement;
+        gg[1] = lastelement1;
+        for (int i = 0; i < gg.length; i++) {
+            System.out.println(gg[i]);
+
+        }
+
+        scan.close();
+    }
+}
