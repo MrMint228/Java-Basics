@@ -1,0 +1,35 @@
+public class mass2 {
+    public static void main(String[] args){
+        int[] gg = new int[5];
+        gg[0] = 5;
+        gg[1] = 65;
+        gg[2] = 475;
+        gg[3] = 8;
+        gg[4] = 1;
+        for (int i =0; i < gg.length; i ++){
+            System.out.println(gg[i]);
+        }
+        System.out.println("\n");
+        for (int i = gg.length - 1 ; i >= 0; i--){
+            System.out.println(gg[i]);
+        }
+        System.out.println("\n");
+        for (int i = 0; i < gg.length; i++){
+            for (int j = 0; j < gg.length -1 -i; j++){
+                if (gg[j] > gg[j+1]){
+                    int temp = gg[j];
+                    gg[j] = gg[j+1];
+                    gg[j+1]= temp;
+                    System.out.println(gg[j]);
+                    System.out.println("\n");
+                    System.out.println(gg[i]);
+                }
+            }
+        }
+        System.out.println("\n");
+        for (int i =0; i < gg.length; i ++){
+            System.out.println(gg[i]);
+        }
+
+    }
+}
