@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class mass2 {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        int[] gg = new int[5];
+
+        for (int i =0; i < gg.length; i ++){
+            System.out.println("Введите элемент массива массив: ");
+            gg[i] = scan.nextInt();
+        }
+        for (int i =0; i < gg.length; i ++){
+            System.out.println(gg[i]);
+        }
+        System.out.println("\n");
+        for (int i = gg.length - 1 ; i >= 0; i--){
+            System.out.println(gg[i]);
+        }
+        System.out.println("\n");
+        int[] bg = new int[5];
+        for (int i =0; i < gg.length; i ++){
+            System.out.println("Введите элемент массива массив: ");
+            bg[i] = scan.nextInt();
+        }
+        for (int i =0; i < gg.length; i ++){
+            System.out.println(bg[i]);
+        }
+        if (gg.length == bg.length) {
+            System.out.println("Класс! Давайте сложим их!\n");
+            int[] biggg = new int[gg.length + bg.length];
+            for (int i=0; i < gg.length; i++){
+                biggg[i]  = gg[i];
+            }
+            for (int i=0; i < bg.length; i++){
+                biggg[gg.length + i] = bg[i];
+            }
+            for (int i=0; i < biggg.length; i++){
+                System.out.println(biggg[i]);
+            }
+
+
+        }
+        scan.close();
+
+    }
+}
